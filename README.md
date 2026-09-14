@@ -48,6 +48,7 @@ pip install anofit
 
 - Python 3.10 – 3.13, Windows / Linux
 - 학습은 GPU 가 필요하다 (실측 요구 VRAM 은 `anofit doctor` 가 말해 준다). 검사는 CPU 로도 된다.
+- 산출물·캐시·가중치를 어느 디스크에 둘지는 `anofit.yaml` 로 정한다 — 본보기 [`anofit.example.yaml`](anofit.example.yaml). 없으면 사용자 캐시 폴더에 쌓인다.
 
 ## 5분 시작
 
