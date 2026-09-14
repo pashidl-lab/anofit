@@ -7,7 +7,7 @@
 *Anomaly detection for machine vision, trained from good images only — structural and
 logical defects, with a dashboard. Documentation is in Korean; the CLI prints Korean.*
 
-- 문서·이슈: <https://github.com/pashidl-lab/anofit>
+- 문서·이슈: <https://github.com/pashidl-lab/anofit> — 대시보드 따라하기: [`docs/dashboard-walkthrough.md`](docs/dashboard-walkthrough.md)
 - 문의·라이선스: pashidl.lab@gmail.com
 
 ---
