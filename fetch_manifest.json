@@ -1,0 +1,82 @@
+{
+  "schema": 1,
+  "updated": "2026-09-14",
+  "note": "anofit 은 가중치를 재배포하지 않는다. 전부 원 배포처에서 받고 sha256 을 대조한다. 값은 검증된 서버 사본의 sha256 이며, HF 항목은 X-Linked-ETag(LFS sha256)와 일치함을 확인했다.",
+  "items": [
+    {
+      "key": "gdino",
+      "title": "GroundingDINO Swin-T (OGC)",
+      "asset": "logic_ckpt_dir",
+      "rel": "groundingdino_swint_ogc.pth",
+      "url": "https://github.com/IDEA-Research/GroundingDINO/releases/download/v0.1.0-alpha/groundingdino_swint_ogc.pth",
+      "size": 693997677,
+      "sha256": "3b3ca2563c77c69f651d7bd133e97139c186df06231157a64c507099c52bc799",
+      "modes": ["logic"],
+      "publisher": "IDEA-Research",
+      "license": "Apache-2.0"
+    },
+    {
+      "key": "ram_plus",
+      "title": "Recognize Anything Plus (Swin-L, 14M)",
+      "asset": "logic_ckpt_dir",
+      "rel": "ram_plus_swin_large_14m.pth",
+      "url": "https://huggingface.co/xinyu1205/recognize-anything-plus-model/resolve/main/ram_plus_swin_large_14m.pth",
+      "size": 3010210801,
+      "sha256": "497c178836ba66698ca226c7895317e6e800034be986452dbd2593298d50e87d",
+      "modes": ["logic"],
+      "publisher": "Xinyu Huang et al. (recognize-anything)",
+      "license": "Apache-2.0"
+    },
+    {
+      "key": "sam_hq",
+      "title": "SAM-HQ ViT-H",
+      "asset": "logic_ckpt_dir",
+      "rel": "sam_hq_vit_h.pth",
+      "also": [["pretrained_dir", "sam_hq_vit_h.pth"]],
+      "url": "https://huggingface.co/lkeab/hq-sam/resolve/main/sam_hq_vit_h.pth",
+      "size": 2570940653,
+      "sha256": "a7ac14a085326d9fa6199c8c698c4f0e7280afdbb974d2c4660ec60877b45e35",
+      "modes": ["logic", "struct"],
+      "publisher": "SysCV (sam-hq)",
+      "license": "Apache-2.0"
+    },
+    {
+      "key": "sam",
+      "title": "Segment Anything ViT-H",
+      "asset": "pretrained_dir",
+      "rel": "sam_vit_h_4b8939.pth",
+      "url": "https://dl.fbaipublicfiles.com/segment_anything/sam_vit_h_4b8939.pth",
+      "size": 2564550879,
+      "sha256": "a7bf3b02f3ebf1267aba913ff637d9a2d5c33d3173bb679e46d9f338c26f262e",
+      "modes": ["struct"],
+      "publisher": "Meta AI",
+      "license": "Apache-2.0"
+    },
+    {
+      "key": "teacher",
+      "title": "EfficientAD teacher (medium) — SALAD 저장소 동봉본",
+      "asset": "teacher_weights",
+      "rel": "",
+      "url": "https://github.com/MaticFuc/SALAD/raw/main/models/teacher_medium.pth",
+      "size": 32114834,
+      "sha256": "ef2d2e5b6322153326f631e717a16be76e1c80a521571b8644ab3f0a4dc4c3e4",
+      "modes": ["struct"],
+      "publisher": "Matic Fučka (SALAD); 원출처 nelson1425/EfficientAD",
+      "license": "MIT (SALAD) / Apache-2.0 (EfficientAD)"
+    },
+    {
+      "key": "imagenette",
+      "title": "Imagenette v2 (full size) — EfficientAD penalty 용 ImageNet 대체",
+      "asset": "imagenet_path",
+      "rel": "",
+      "archive": "imagenette2.tgz",
+      "extract_check": ["train", 9469],
+      "url": "https://s3.amazonaws.com/fast-ai-imageclas/imagenette2.tgz",
+      "size": 1557161267,
+      "sha256": "6cbfac238434d89fe99e651496f0812ebc7a10fa62bd42d6874042bf01de4efd",
+      "modes": ["struct"],
+      "publisher": "fast.ai",
+      "license": "Apache-2.0 (Imagenette); 이미지 자체는 ImageNet 이용 약관"
+    }
+  ]
+}
