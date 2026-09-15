@@ -1,8 +1,8 @@
 # Changelog
 
-## 0.1.0 (준비 중)
+## 0.1.0 (2026-09-15)
 
-첫 공개.
+첫 공개. PyPI: `pip install "anofit[train]"` (Python 3.10–3.13, Windows·Linux 휠 8개).
 
 - struct(SALAD) · logic(CSAD) · both 세 모드, 대시보드(준비 → 학습 → 임계값 → 검사)
 - `anofit fetch`: 파운데이션 가중치를 원 배포처에서 받고 sha256 대조, 이어받기
