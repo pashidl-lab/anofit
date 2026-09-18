@@ -174,7 +174,7 @@ Also downloaded on first training run, by the libraries themselves into their ow
 (`HF_HOME`, `TORCH_HOME`): `bert-base-uncased` (GroundingDINO's text encoder),
 `timm/wide_resnet50_2` (CSAD encoder), `dino_vitbase8` (SALAD), and — since 0.1.1 —
 `timm/vit_small_patch14_dinov2.lvd142m` (DINOv2 ViT-S/14, Meta AI, Apache 2.0, ~85 MB;
-used by the `dpat` branch). These are not part of `anofit fetch`; a first training needs
+used by the `dpat` and `dhist` branches). These are not part of `anofit fetch`; a first training needs
 network access for them (about 1.1 GB). anofit copies the DINOv2 weights into
 `weights_root/timm__.../encoder.pth` on first use so an offline site can be served by
 copying that folder.

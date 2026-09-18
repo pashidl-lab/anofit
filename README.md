@@ -19,12 +19,13 @@ logical defects, with a dashboard. Documentation is in Korean; the CLI prints Ko
 | `struct` | 긁힘 · 깨짐 · 오염 · 변형 | SALAD (ICCV 2025) — 교사/학생 + 오토인코더 |
 | `logic` | 부품 누락 · 개수 오류 · 위치 바뀜 | CSAD (BMVC 2024) — 부품 분할 + 히스토그램 |
 | `dpat` | 양품과 다른 국소 패턴 (0.1.1) | DINOv2 패치 특징 + 양품 메모리 (학습 없음) |
+| `dhist` | **있어야 할 것이 없음** — 작은 부품 누락 (0.1.2) | DINOv2 패치를 64개 시각 단어로 묶어 단어별 개수 (학습 없음) |
 | `both` | 둘 다 (기본) | 점수를 z-score 로 합침 |
 
 0.1.1 부터는 **어느 분기를 쓸지 품종마다 정한다** — 티칭 때 받은 불량이 8장 이상이면 그것으로
-고르고(후보 넷 중, 기본값보다 2%p 이상 나을 때만 교체), 없으면 구조부 기본값을 쓴다.
-5품종 실측: 고정 `both` 90.91 · 고정 구조부 92.03 · **불량으로 고르면 92.69**
-(breakfast_box 는 85.71 → 92.66).
+고르고(후보 넷 `{struct, +dhist, +dpat, +dpat+dhist}` 중, 기본값보다 2%p 이상 나을 때만 교체), 없으면
+구조부 기본값을 쓴다. 5품종 실측: 고정 `both` 90.91 · 고정 구조부 92.03 · **불량으로 고르면 93.00**
+(breakfast_box 는 85.71 → 94.04). 논리부(`phist`)는 그대로 학습되며 임계값 탭에서 `both` 로 고를 수 있다.
 
 MVTec LOCO 5품종 실측 (AUROC, 양품 = test/good, 이상 = logical + structural, 2026-09-09):
 
