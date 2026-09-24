@@ -77,9 +77,22 @@ anofit score <번들> photo.png --models-dir <번들>                 # 한 장 
 anofit export <번들> -o my_part.afz                               # 현장으로 옮길 파일 하나
 ```
 
+## 현장으로 옮기기 (0.2.0)
+
+- `.afz` 하나면 된다. 번들이 **쓰기로 고른 분기**에 필요한 사전학습 인코더(DINOv2 88 MB ·
+  wide_resnet50 100 MB)가 같이 실려서, 인터넷 없는 라인 PC 에서도 첫 채점부터 돈다.
+  `anofit info my_part.afz` 가 무엇이 실렸는지 보여 준다.
+- 번들 가중치는 pickle 이 아니다(형식 2). 0.1.x 가 내보낸 `.afz` 는 가중치가 pickle 이라
+  — 열면 그 안의 코드가 돌 수 있다 — 가져오기를 거부한다. 만든 쪽에서 0.2.0 으로 다시
+  내보내거나, 만든 사람을 믿으면 `anofit import old.afz <폴더> --trust-legacy`.
+- 이미 가진 번들 폴더는 `anofit migrate <번들>` 로 형식 2 로 바꿔 둔다(점수는 그대로).
+- 대시보드는 자기 기계에서만 받는다. 다른 PC 에서 열려면 SSH 터널을 쓰거나
+  `anofit serve --host 0.0.0.0 --allow-host <그 PC 가 쓰는 이름/IP>` (인증이 없으니 믿는 망에서만).
+  서버를 다시 켰으면 화면을 새로 고친다.
+
 ## 가중치는 동봉하지 않는다
 
-`anofit fetch` 가 원 배포처에서 받는다. 각 가중치는 배포처의 라이선스를 따른다
+패키지에는 없다 — `anofit fetch` 가 원 배포처에서 받는다(`.afz` 가 싣는 인코더는 위 절). 각 가중치는 배포처의 라이선스를 따른다
 (`THIRD_PARTY_NOTICES.md` §6, 매니페스트 `fetch_manifest.json`).
 
 | | 크기 | 출처 |

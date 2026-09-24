@@ -179,11 +179,17 @@ network access for them (about 1.1 GB). anofit copies the DINOv2 weights into
 `weights_root/timm__.../encoder.pth` on first use so an offline site can be served by
 copying that folder.
 
+Since 0.2.0, `anofit export` also writes into the `.afz` the pretrained encoder(s) that the
+bundle's chosen branches need, so an offline line PC can score from that one file:
+DINOv2 ViT-S/14 (`dpat_encoder.pth`, Meta AI, Apache 2.0) and/or `wide_resnet50_2.tv2_in1k`
+(`logic_encoder.pth`, torchvision weights, BSD-3-Clause). Passing such a `.afz` to someone else
+redistributes those weights; their licenses and these notices go with it.
+
 ---
 
 ## 7. Runtime dependencies
 
 Installed separately by pip and not redistributed here: NumPy (BSD-3-Clause),
 OpenCV (Apache 2.0), Pillow (MIT-CMU), PyYAML (MIT), PyTorch (BSD-3-Clause),
-torchvision (BSD-3-Clause), and — for training — timm (Apache 2.0),
-transformers (Apache 2.0), scikit-learn (BSD-3-Clause), SciPy (BSD-3-Clause).
+torchvision (BSD-3-Clause), timm (Apache 2.0; since 0.1.1 also at inference), and — for
+training — transformers (Apache 2.0), scikit-learn (BSD-3-Clause), SciPy (BSD-3-Clause).
